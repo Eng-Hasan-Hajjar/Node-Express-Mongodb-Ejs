@@ -7,28 +7,28 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-//注册接口
+//register interface
 router.post('/regist', (req, res) => {
   let data = {
     username: req.body.username,
     password: req.body.password,
     password2: req.body.password2
   }
-  //数据校验
+  //Data validation
   model.connect((db) => {
     db.collection('users').insertOne(data, (err, ret) => {
       if (err) {
-        console.log('注册失败');
+        console.log('registration failed');
         res.redirect('/regist')
       } else {
-        console.log('注册成功');
+        console.log('registration success');
         res.redirect('/login');
       }
     })
   })
 })
 
-//登录接口
+//login interface
 router.post('/login', (req, res) => {
   let data = {
     username: req.body.username,
@@ -39,13 +39,13 @@ router.post('/login', (req, res) => {
     db.collection('users').find(data).toArray((err, docs) => {
       if (err) {
         res.redirect('/login');
-        console.log('账号或密码错误');
+        console.log('Incorrect username or password');
       } else {
         if (docs.length > 0) {
-          //登录成功,进行session会话存储
+          //Successful login, session session storage
           req.session.username = data.username;
           res.redirect('/?pageIndex=' + 1);
-          console.log('登录成功');
+          console.log('login successful');
         } else {
           res.redirect('/login');
         }
@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
   })
 })
 
-//退出登录
+//sign out
 router.get('/logout', (req, res) => {
   req.session.username = null;
   res.redirect('/login');
