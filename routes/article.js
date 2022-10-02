@@ -8,7 +8,7 @@ var model = require('../model')
 //   res.render('index', { username: username });
 // });
 
-//文章添加操作
+//Article addition operation
 router.post('/add', (req, res) => {
   var id = parseInt(req.body.id);
   var pageIndex = req.body.pageIndex;
@@ -18,9 +18,9 @@ router.post('/add', (req, res) => {
     model.connect((db) => {
       db.collection('article').updateOne({id: id}, {$set:{title: title, content: content}}, (err, docs) => {
         if (err) {
-          console.log('文章更新失败' + err);
+          console.log('Article update failed' + err);
         } else {
-          console.log('文章更新成功');
+          console.log('Article updated successfully');
           res.redirect('/?pageIndex=' + pageIndex);
         }
       })
@@ -35,9 +35,9 @@ router.post('/add', (req, res) => {
     model.connect((db) => {
       db.collection('article').insertOne(data, (err, ret) => {
         if (err) {
-          console.log('文章发布失败');
+          console.log('Article publishing failed');
         } else {
-          console.log('文章发布成功');
+          console.log('Article published successfully');
           res.redirect('/');
         }
       })
@@ -45,14 +45,14 @@ router.post('/add', (req, res) => {
   }
 })
 
-//文章删除操作
+//Article delete operation
 router.get('/delete', (req, res) => {
   var id = parseInt(req.query.id);
   var pageIndex = req.query.pageIndex;
   model.connect((db) => {
     db.collection('article').deleteOne({id: id}, (err, ret) => {
       if (err) {
-        console.log('文章删除失败');
+        console.log('Article deletion failed');
       } else {
         console.log('文章删除成功');
       }
