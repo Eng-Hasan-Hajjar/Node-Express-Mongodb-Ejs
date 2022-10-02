@@ -21,7 +21,7 @@
             <td><%= item.username %></td>
             <td><%= item.time %></td>
             <td><a href="/article-detail?id=<%= item.id %>&pageIndex=<%= data.pageIndex %>"><%= item.title %></a></td>
-            <td><a style="margin-right:20px" href="/write?id=<%= item.id %>&pageIndex=<%= data.pageIndex %>">编辑</a><a href="/article/delete?id=<%= item.id %>&pageIndex=<%= data.pageIndex %>">删除</a></td>
+            <td><a style="margin-right:20px" href="/write?id=<%= item.id %>&pageIndex=<%= data.pageIndex %>">edit</a><a href="/article/delete?id=<%= item.id %>&pageIndex=<%= data.pageIndex %>">delete</a></td>
           </tr>
         <% }) %>
       </table>
