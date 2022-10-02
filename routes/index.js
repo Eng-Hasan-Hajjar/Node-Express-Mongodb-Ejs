@@ -15,14 +15,14 @@ router.get('/', function(req, res) {
   model.connect((db) => {
     db.collection('article').find().toArray((err, docs) => {
       if (err) {
-        console.log('获取文章列表失败');
+        console.log('Failed to get article list');
       } else {
         data.pageTotal = Math.ceil(docs.length/data.pageSize);
-        //查询当前页的文章列表
+        //Query the list of articles on the current page
         model.connect((db) => {
           db.collection('article').find().sort({_id: -1}).limit(data.pageSize).skip((data.pageIndex-1)*data.pageSize).toArray((err, docs2) => {
             if (err) {
-              console.log('获取文章列表分页数据失败');
+              console.log('Failed to get article list pagination data');
             } else {
               if (docs2.length === 0) {
                 res.redirect('/?pageIndex='+ ((data.pageIndex-1) || 1))
@@ -41,17 +41,17 @@ router.get('/', function(req, res) {
   })
 });
 
-//渲染注册页
+//Rendering the registration page
 router.get('/regist', (req, res) => {
   res.render('regist', {});
 })
 
-//渲染登录页
+//Rendering the login page
 router.get('/login', (req, res) => {
   res.render('login', {});
 })
 
-//渲染写文章页面
+//Render the write article page
 router.get('/write', (req, res) => {
   let username = req.session.username;
   var id = parseInt(req.query.id);
@@ -64,7 +64,7 @@ router.get('/write', (req, res) => {
     model.connect((db) => {
       db.collection('article').findOne({id: id}, (err, docs) => {
         if (err) {
-          console.log('文章查找失败');
+          console.log('Article find failed');
         } else {
           currentArticle = docs;
           currentArticle['pageIndex'] = pageIndex; 
@@ -77,7 +77,7 @@ router.get('/write', (req, res) => {
   }
 })
 
-//渲染文章详情页面
+//Render the article details page
 router.get('/article-detail', (req, res) => {
   var id = parseInt(req.query.id);
   var username = req.session.username;
@@ -88,7 +88,7 @@ router.get('/article-detail', (req, res) => {
   model.connect((db) => {
     db.collection('article').findOne({id: id}, (err, docs) => {
       if (err) {
-        console.log('文章查找失败');
+        console.log('Article find failed');
       } else {
         currentArticle = docs;
         currentArticle['time'] = moment(currentArticle.id).format('YYYY-MM-DD HH:mm:ss');
