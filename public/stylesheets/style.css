@@ -1,8 +1,8 @@
-/** 清除内外边距 **/
-body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-th, td /* table elements 表格元素 */ {
+/** Clear inner and outer margins **/
+body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements structural element */
+dl, dt, dd, ul, ol, li, /* list elements list element */
+form, fieldset, legend, button, input, textarea, /* form elements form element */
+th, td /* table elements table element */ {
 margin: 0;
 padding: 0;
 }
