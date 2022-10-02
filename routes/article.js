@@ -54,7 +54,7 @@ router.get('/delete', (req, res) => {
       if (err) {
         console.log('Article deletion failed');
       } else {
-        console.log('文章删除成功');
+        console.log('Article deleted successfully');
       }
       res.redirect('/?pageIndex=' + pageIndex);
     })
