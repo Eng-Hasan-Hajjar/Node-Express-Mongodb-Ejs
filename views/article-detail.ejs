@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include head %>
+  <title>文章详情</title>
+</head>
+<body>
+  <%- include bar %>
+
+  <div class="article-detail">
+    <h2><%= currentArticle.title %></h2>
+    <div style="display: flex;margin: 40px 0;">
+      <div style="margin-right:20px">作者: <%= currentArticle.username %></div>
+      <div>发布时间: <%= currentArticle.time %></div>
+    </div>
+    <div class="flex"><%= currentArticle.content %></div>
+  </div>
+</body>
+<style>
+  .article-detail {
+    width: 688px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+  }
+</style>
+</html>

@@ -1,0 +1,85 @@
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+margin: 0;
+padding: 0;
+}
+/** 设置默认字体 **/
+body,
+button, input, select, textarea /* for ie */ {
+font: 14px/1.5 tahoma,;
+}
+
+
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读, 让 small 正常化 */
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+/** 重置文本格式元素 **/
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+sup { vertical-align: text-top; } /* 重置, 减少对行高的影响 */
+sub { vertical-align: text-bottom; }
+/** 重置表单元素 **/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; width: 100%; }
+
+a {
+  color: #00B7FF;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 944px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+input {
+  width: 300px;
+  height: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background:none;  
+	outline:none;  
+	border:1px solid #ddd;
+}
+
+.margin-b-20 {
+  margin-bottom: 20px;
+}
+.margin-b-40 {
+  margin-bottom: 40px;
+}
+
+.button {
+  width: initial;
+  height: 40px;
+  padding: 10px 15px;
+  line-height: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background: #00B7FF;
+  border:1px solid #ddd;
+}
+
+.button-regist, .button-login {
+  width: 330px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+}

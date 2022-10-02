@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>写文章</title>
+    <%- include head %>
+  </head>
+  <body>
+    <%- include bar %>
+
+    <div class="container">
+      <form action="/article/add" method="post">
+        <input type="hidden" name="id" value="<%= currentArticle.id %>">
+        <input type="hidden" name="pageIndex" value="<%= currentArticle.pageIndex %>">
+        <input class="write-title margin-b-20" name="title" type="text" placeholder="请输入文章标题" value="<%= currentArticle.title %>">
+        <textarea class="write-content margin-b-20" name="content" rows="20"><%= currentArticle.content %></textarea>
+        <% if (currentArticle.id) { %>
+          <button class="button margin-b-20 flex" type="submit">更新</button>
+        <% } else { %>
+          <button class="button margin-b-20 flex" type="submit">发布</button>
+        <% } %>
+      </form>
+    </div>
+  </body>
+  <style>
+    .write-title {
+      width: 994px;
+    }
+    .write-content {
+      width: 994px;
+      padding: 10px 15px;
+    }
+  </style>
+</html>
