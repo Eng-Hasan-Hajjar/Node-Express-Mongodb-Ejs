@@ -21,15 +21,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// session配置
+// session تكوين اعتراض تسجيل الدخول   
 app.use(session({
   secret: 'my project',
   resave: false,
   saveUninitialized: true,
-  cookie: {maxAge: 1000 * 60 * 60 *24}  //指定登陆对话的有效时长
+  cookie: {maxAge: 1000 * 60 * 60 *24}  //يحدد مدة صلاحية جلسة تسجيل الدخول
 }))
 
-//登录拦截
+//اعتراض تسجيل الدخول
 app.get('*', (req, res, next) => {
   var username = req.session.username;
   var path = req.path
