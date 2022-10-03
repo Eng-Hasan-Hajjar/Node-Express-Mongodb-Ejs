@@ -3,11 +3,11 @@ var MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017'
 const dbName = 'project'
 
-//数据库链接方法封装
+//تغليف طريقة ارتباط قاعدة البيانات
 function connect (callback) {
   MongoClient.connect(url, function(err,client) {
     if (err) {
-      console.log('数据库连接错误', err);
+      console.log('خطأ في اتصال قاعدة البيانات', err);
     } else {
       var db = client.db(dbName);
       callback && callback(db)
