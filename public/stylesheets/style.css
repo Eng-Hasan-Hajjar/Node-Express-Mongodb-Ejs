@@ -1,32 +1,33 @@
-/** 清除内外边距 **/
-body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements 结构元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-th, td /* table elements 表格元素 */ {
+/** Clear inner and outer margins **/
+body, h1, h2, h3, h4, h5, h6, hr, p, /* structural elements structural element */
+dl, dt, dd, ul, ol, li, /* list elements list element */
+form, fieldset, legend, button, input, textarea, /* form elements form element */
+th, td /* table elements table element */ {
 margin: 0;
 padding: 0;
 }
-/** 设置默认字体 **/
+/** تعيين الخط الافتراضي **/
 body,
 button, input, select, textarea /* for ie */ {
 font: 14px/1.5 tahoma,;
 }
 
 
-small { font-size: 12px; } /* 小于 12px 的中文很难阅读, 让 small 正常化 */
-/** 重置列表元素 **/
+small { font-size: 12px; } /* من الصعب قراءة اللغة الصينية التي يقل حجمها عن 12 بكسل ، وتكون صغيرة الحجم*/
+/** إعادة تعيين عنصر القائمة **/
 ul, ol { list-style: none; }
-/** 重置文本格式元素 **/
+/** إعادة تعيين عناصر تنسيق النص **/
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
-sup { vertical-align: text-top; } /* 重置, 减少对行高的影响 */
+sup { vertical-align: text-top; } /*إعادة تعيين ، تأثير أقل على ارتفاع الصف */
 sub { vertical-align: text-bottom; }
-/** 重置表单元素 **/
+/** إعادة تعيين عناصر النموذج **/
 legend { color: #000; } /* for ie6 */
-fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-/* 注：optgroup 无法扶正 */
-/** 重置表格元素 **/
+fieldset, img { border: 0; } /*  */
+button, input, select, textarea { font-size: 100%; } /* Save translation
+جعل عناصر النموذج ترث حجم الخط تحت ie*/
+/*ملاحظة: لا يمكن تصحيح optgroup */
+/** إعادة تعيين عنصر الجدول **/
 table { border-collapse: collapse; border-spacing: 0; width: 100%; }
 
 a {
